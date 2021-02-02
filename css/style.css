@@ -115,6 +115,7 @@ h6 { font-size:1.80rem; line-height:2.5rem; }
 
 /* text size */
 .font-size-0 { font-size: 0; }
+.text-ultra-small { font-size:10px; line-height:14px; }
 .text-very-small { font-size:11px; line-height:14px; }
 .text-extra-small { font-size:12px; line-height:16px; }
 .text-small { font-size:13px; line-height:22px; }
