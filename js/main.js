@@ -1003,6 +1003,9 @@
                 data: formObj.serialize(),
                 success: function ( result ) {
                     _this.removeClass( 'loading' );
+                    formObj.find( 'input[type=text],input[type=email],input[type=tel],input[type=password],textarea' ).each( function () {
+                        $( this ).val('');
+                    });
                     if( redirectVal != '' && redirectVal != undefined ) {
                         window.location.href = redirectVal;
                     } else {
@@ -1022,6 +1025,7 @@
                     }
                 }
             });
+
             alert('submitted');
         }
         return false;
