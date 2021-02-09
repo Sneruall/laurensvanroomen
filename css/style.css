@@ -136,6 +136,23 @@ h6 { font-size:1.80rem; line-height:2.5rem; }
 .parallax-title { padding: 16px 35px; display: inline-block }
 
 /* text color, link color and link hover color */
+/* .bg-1 { background-color:#3edfb6; }
+.bg-2 { background-color:#58e49a; }
+.bg-3 { background-color:#7ce878; }
+.bg-4 { background-color:#a5e850; }
+.bg-5 { background-color:#d0e51b; }
+.bg-6 { background-color:#2ed47c; }
+.bg-7 { background-color:#e8a626; } */
+
+.text-1, .btn-link.text-1, a.text-1-hover:hover { color: #3edfb6; }
+.text-2, .btn-link.text-2, a.text-2-hover:hover { color: #58e49a; }
+.text-3, .btn-link.text-3, a.text-3-hover:hover { color: #7ce878; }
+.text-4, .btn-link.text-4, a.text-4-hover:hover { color: #a5e850; }
+.text-5, .btn-link.text-5, a.text-5-hover:hover { color: #d0e51b; }
+.text-6, .btn-link.text-6, a.text-6-hover:hover { color: #2ed47c; }
+.text-7, .btn-link.text-7, a.text-7-hover:hover { color: #e8a626; }
+
+
 .text-white, .btn-link.text-white, a.text-white-hover:hover { color:#fff; }
 .text-black, .btn-link.text-black,  a.text-black-hover:hover { color:#000; }
 .text-extra-dark-gray, .btn-link.text-extra-dark-gray, a.text-extra-dark-gray-hover:hover { color:#232323; }
@@ -853,7 +870,7 @@ input.btn:focus { border-width: 2px; }
 .btn-gradient-light-purple-light-red { background-image: linear-gradient(to right, #b884fd, #fd9395, #b884fd); color: #fff; background-size: 200% auto; transition: all 0.3s cubic-bezier(.25,.8,.25,1); }
 .btn-gradient-yellowish-green-turquoise { background-image: linear-gradient(to right, #d0e51b, #3edfb6, #d0e51b); color: #232323; background-size: 200% auto; transition: all 0.3s cubic-bezier(.25,.8,.25,1); }
 .btn-gradient-peacock-blue-crome-yellow-2 { background-image: linear-gradient(to right, #5cc088, #e7a965, #5cc088); color: #ffffff; background-size: 200% auto; transition: all 0.3s cubic-bezier(.25,.8,.25,1); }
-.btn-gradient-turquoise-green-yellowish { background-image: linear-gradient(to right top, #3edfb6, #58e49a, #7ce878, #a5e850, #d0e51b); color: #fff; background-size: 300% auto; transition: all 0.3s cubic-bezier(.25,.8,.25,1); }
+.btn-gradient-turquoise-green-yellowish { background-image: linear-gradient(to right top, #58e49a, #7ce878, #a5e850); color: #fff; background-size: 300% auto; transition: all 0.3s cubic-bezier(.25,.8,.25,1); }
 .btn-gradient-shamrock-green-light-orange:hover, .btn-gradient-shamrock-green-light-orange:focus, .btn-gradient-tan-geraldine-2:hover, .btn-gradient-tan-geraldine-2:focus, .btn-gradient-magenta-orange:hover, .btn-gradient-magenta-orange:focus, .btn-gradient-magenta-orange-2:hover, .btn-gradient-magenta-orange-2:focus, .btn-gradient-purple-magenta:hover, .btn-gradient-purple-magenta:focus, .btn-gradient-light-purple-light-orange:hover, .btn-gradient-light-purple-light-orange:focus, .btn-gradient-sky-blue-pink:hover, .btn-gradient-sky-blue-pink:focus, .btn-gradient-peacock-blue-crome-yellow:hover, .btn-gradient-peacock-blue-crome-yellow:focus, .btn-gradient-fast-blue-purple:hover, .btn-gradient-fast-blue-purple:focus, .btn-gradient-tan-geraldine:hover, .btn-gradient-tan-geraldine:focus, .btn-gradient-light-purple-light-red:hover, .btn-gradient-light-purple-light-red:focus, .btn-gradient-yellowish-green-turquoise:hover, .btn-gradient-yellowish-green-turquoise:focus, .btn-gradient-peacock-blue-crome-yellow-2:hover, .btn-gradient-peacock-blue-crome-yellow-2:focus, .btn-gradient-turquoise-green-yellowish:hover, .btn-gradient-turquoise-green-yellowish:focus { background-position: right center; color: #fff; }
 
 /* button gradient border */
