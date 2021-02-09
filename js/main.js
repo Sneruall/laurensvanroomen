@@ -995,9 +995,8 @@
         }
         if( ! error && actionURL != '' && actionURL != undefined ) {
             _this.addClass( 'loading' );
-            $('form').on('submit',function(){
-                alert('submitted');
-     });
+            alert('submitted');
+
             // $.ajax({
             //     type: 'POST',
             //     url: actionURL,
