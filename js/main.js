@@ -1003,7 +1003,9 @@
                 data: formObj.serialize(),
                 success: function ( result ) {
                     _this.removeClass( 'loading' );
-                   
+                    setTimeout(formObj.find( 'input[type=text],input[type=email],input[type=tel],input[type=password],textarea' ).each( function () {
+                        $( this ).val('');
+                    }), 5000);
                     if( redirectVal != '' && redirectVal != undefined ) {
                         window.location.href = redirectVal;
                     } else {
@@ -1024,6 +1026,7 @@
                 }
             });
 
+            alert('verzonden');
             function hideAlert() {
                 var x = document.getElementById("success-message");
                 if (x.style.display === "none") {
@@ -1034,9 +1037,7 @@
               }
               hideAlert();
 
-              setTimeout(formObj.find( 'input[type=text],input[type=email],input[type=tel],input[type=password],textarea' ).each( function () {
-                $( this ).val('');
-            }), 5000);
+
 
         }
         return false;
