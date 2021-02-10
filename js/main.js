@@ -1171,7 +1171,7 @@
       }
       if( ! error && actionURL != '' && actionURL != undefined ) {
           _this.addClass( 'loading' );
-
+          console.log('loading');
           $.ajax({
               type: 'POST',
               url: actionURL,
