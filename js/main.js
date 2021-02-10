@@ -1199,7 +1199,8 @@
                   // }
               }
           });
-          console.log('bericht verzonden')
+          console.log('bericht verzonden');
+          window.location.href = "../website-laten-maken.html";
       }
       return false;
   });
