@@ -1181,7 +1181,8 @@
                   
                   if( redirectVal != '' && redirectVal != undefined ) {
                       window.location.href = redirectVal;
-                  // } else {
+                  }
+                  // else {
                   //     if ( typeof ( result ) !== 'undefined' && result !== null ) {
                   //         result = $.parseJSON( result );
                   //     }
