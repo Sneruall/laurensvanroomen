@@ -1199,9 +1199,7 @@
                   // }
               }
           });
-
-          alert('verzonden');
-
+          console.log('bericht verzonden')
       }
       return false;
   });
