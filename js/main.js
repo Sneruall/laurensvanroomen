@@ -1105,116 +1105,105 @@
   });
 
   // My own contact form
-  $(document).on("click", ".submit", function (event) {
-      event.preventDefault();
+  // $(document).on("click", ".submit", function (event) {
+  //     event.preventDefault();
     
-      function validateForm() {
-        var name = document.forms["contact-over-mij"]["name"].value;
-        if (name == "") {
-          alert("Name must be filled out");
-          return false;
-        }
-      }
+  //     function validateForm() {
+  //       var name = document.forms["contact-over-mij"]["name"].value;
+  //       if (name == "") {
+  //         alert("Name must be filled out");
+  //         return false;
+  //       }
+  //     }
 
-      validateForm();
+  //     validateForm();
 
-    function hideAlert() {
-      var x = document.getElementById("success-message");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-    hideAlert();
-  });
+  //   function hideAlert() {
+  //     var x = document.getElementById("success-message");
+  //     if (x.style.display === "none") {
+  //       x.style.display = "block";
+  //     } else {
+  //       x.style.display = "none";
+  //     }
+  //   }
+  //   hideAlert();
+  // });
 
   /****** Contact form validation on submit ******/
-  // $( document ).on( 'click', '.submit', function() {
-  //     var error       = false,
-  //         _this       = $( this ),
-  //         formObj     = _this.parents( 'form' ),
-  //         emailFormat = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
-  //         telFormat   = /[0-9 -()+]+$/,
-  //         actionURL   = formObj.attr( 'action' ),
-  //         resultsObj  = formObj.find( '.form-results' ),
-  //         redirectVal = formObj.find( '[name="redirect"]' ).val();
-  //     formObj.find( '.required' ).removeClass( 'error' );
-  //     formObj.find( '.required' ).each( function() {
-  //         var __this   = $( this ),
-  //             fieldVal= __this.val();
-  //         if( fieldVal == '' || fieldVal == undefined ) {
-  //             error = true;
-  //             __this.addClass( 'error' );
-  //         } else if( __this.attr( 'type' ) == 'email' && ! emailFormat.test( fieldVal ) ) {
-  //             error = true;
-  //             __this.addClass( 'error' );
-  //         } else if( __this.attr( 'type' ) == 'tel' && ! telFormat.test( fieldVal ) ) {
-  //             error = true;
-  //             __this.addClass( 'error' );
-  //         }
-  //     });
-  //     var termsObj = formObj.find( '.terms-condition' );
-  //     if ( termsObj.length > 0 ) {
-  //         if ( ! termsObj.is( ':checked' ) ) {
-  //             error = true;
-  //             termsObj.addClass( 'error' );
-  //         }
-  //     }
-  //     // Google reCaptcha Verify
-  //     if( formObj.find( '.g-recaptcha' ).length > 0 ) {
-  //         var gResponse = grecaptcha.getResponse();
-  //         if ( ! ( gResponse.length ) ) {
-  //             error = true;
-  //             formObj.find( '.g-recaptcha' ).addClass( 'error' );
-  //         }
-  //     }
-  //     if( ! error && actionURL != '' && actionURL != undefined ) {
-  //         _this.addClass( 'loading' );
+  $( document ).on( 'click', '.submit', function() {
+      var error       = false,
+          _this       = $( this ),
+          formObj     = _this.parents( 'form' ),
+          emailFormat = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
+          telFormat   = /[0-9 -()+]+$/,
+          actionURL   = formObj.attr( 'action' ),
+          resultsObj  = formObj.find( '.form-results' ),
+          redirectVal = formObj.find( '[name="redirect"]' ).val();
+      formObj.find( '.required' ).removeClass( 'error' );
+      formObj.find( '.required' ).each( function() {
+          var __this   = $( this ),
+              fieldVal= __this.val();
+          if( fieldVal == '' || fieldVal == undefined ) {
+              error = true;
+              __this.addClass( 'error' );
+          } else if( __this.attr( 'type' ) == 'email' && ! emailFormat.test( fieldVal ) ) {
+              error = true;
+              __this.addClass( 'error' );
+          } else if( __this.attr( 'type' ) == 'tel' && ! telFormat.test( fieldVal ) ) {
+              error = true;
+              __this.addClass( 'error' );
+          }
+      });
+      var termsObj = formObj.find( '.terms-condition' );
+      if ( termsObj.length > 0 ) {
+          if ( ! termsObj.is( ':checked' ) ) {
+              error = true;
+              termsObj.addClass( 'error' );
+          }
+      }
+      // Google reCaptcha Verify
+      if( formObj.find( '.g-recaptcha' ).length > 0 ) {
+          var gResponse = grecaptcha.getResponse();
+          if ( ! ( gResponse.length ) ) {
+              error = true;
+              formObj.find( '.g-recaptcha' ).addClass( 'error' );
+          }
+      }
+      if( ! error && actionURL != '' && actionURL != undefined ) {
+          _this.addClass( 'loading' );
 
-  //         $.ajax({
-  //             type: 'POST',
-  //             url: actionURL,
-  //             data: formObj.serialize(),
-  //             success: function ( result ) {
-  //                 _this.removeClass( 'loading' );
-  //                 setTimeout(formObj.find( 'input[type=text],input[type=email],input[type=tel],input[type=password],textarea' ).each( function () {
-  //                     $( this ).val('');
-  //                 }), 5000);
-  //                 if( redirectVal != '' && redirectVal != undefined ) {
-  //                     window.location.href = redirectVal;
-  //                 } else {
-  //                     if ( typeof ( result ) !== 'undefined' && result !== null ) {
-  //                         result = $.parseJSON( result );
-  //                     }
-  //                     formObj.find( 'input[type=text],input[type=email],input[type=tel],input[type=password],textarea' ).each( function () {
-  //                         $( this ).val('');
-  //                     });
-  //                     formObj.find( 'input[type=checkbox],input[type=radio]' ).prop( 'checked', false );
-  //                     if( formObj.find( '.g-recaptcha' ).length > 0 ) {
-  //                         grecaptcha.reset();
-  //                     }
-  //                     resultsObj.removeClass( 'alert-success' ).removeClass( 'alert-danger' ).hide();
-  //                     resultsObj.addClass( result.alert ).html( result.message );
-  //                     resultsObj.removeClass( 'd-none' ).fadeIn( 'slow' ).delay( 4000 ).fadeOut( 'slow' );
-  //                 }
-  //             }
-  //         });
+          $.ajax({
+              type: 'POST',
+              url: actionURL,
+              data: formObj.serialize(),
+              success: function ( result ) {
+                  _this.removeClass( 'loading' );
+                  
+                  if( redirectVal != '' && redirectVal != undefined ) {
+                      window.location.href = redirectVal;
+                  } else {
+                      if ( typeof ( result ) !== 'undefined' && result !== null ) {
+                          result = $.parseJSON( result );
+                      }
+                      formObj.find( 'input[type=text],input[type=email],input[type=tel],input[type=password],textarea' ).each( function () {
+                          $( this ).val('');
+                      });
+                      formObj.find( 'input[type=checkbox],input[type=radio]' ).prop( 'checked', false );
+                      if( formObj.find( '.g-recaptcha' ).length > 0 ) {
+                          grecaptcha.reset();
+                      }
+                      resultsObj.removeClass( 'alert-success' ).removeClass( 'alert-danger' ).hide();
+                      resultsObj.addClass( result.alert ).html( result.message );
+                      resultsObj.removeClass( 'd-none' ).fadeIn( 'slow' ).delay( 4000 ).fadeOut( 'slow' );
+                  }
+              }
+          });
 
-  //         alert('verzonden');
-  //         function hideAlert() {
-  //             var x = document.getElementById("success-message");
-  //             if (x.style.display === "none") {
-  //               x.style.display = "block";
-  //             } else {
-  //               x.style.display = "none";
-  //             }
-  //           }
-  //           hideAlert();
+          alert('verzonden');
 
-  //     }
-  //     return false;
-  // });
+      }
+      return false;
+  });
 
   /****** Contact form validation on blur ******/
   $(document).on("blur", ".required", function () {
