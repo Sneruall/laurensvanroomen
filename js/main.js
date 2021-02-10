@@ -1138,7 +1138,7 @@
           telFormat   = /[0-9 -()+]+$/,
           actionURL   = formObj.attr( 'action' );
           // resultsObj  = formObj.find( '.form-results' ),
-          // redirectVal = formObj.find( '[name="redirect"]' ).val();
+          redirectVal = formObj.find( '[name="redirect"]' ).val();
       formObj.find( '.required' ).removeClass( 'error' );
       formObj.find( '.required' ).each( function() {
           var __this   = $( this ),
@@ -1179,9 +1179,11 @@
               success: function ( result ) {
                   _this.removeClass( 'loading' );
                   
-                  // if( redirectVal != '' && redirectVal != undefined ) {
-                  //     window.location.href = redirectVal;
-                  // }
+                  if( redirectVal != '' && redirectVal != undefined ) {
+                      window.location.href = redirectVal;
+                  } else{
+                    window.location.href = "http://www.laurensvanroomen.nl";
+                  }
                   // else {
                   //     if ( typeof ( result ) !== 'undefined' && result !== null ) {
                   //         result = $.parseJSON( result );
@@ -1199,7 +1201,6 @@
                   // }
               }
           });
-          window.location.href = "../bericht-verzonden.html";
       }
       return false;
   });
