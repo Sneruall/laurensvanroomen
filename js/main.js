@@ -1199,8 +1199,7 @@
                   // }
               }
           });
-          console.log('bericht verzonden');
-          window.location.href = "../website-laten-maken.html";
+          window.location.href = "../bericht-verzonden.html";
       }
       return false;
   });
