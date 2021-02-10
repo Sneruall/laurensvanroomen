@@ -1181,21 +1181,21 @@
                   
                   if( redirectVal != '' && redirectVal != undefined ) {
                       window.location.href = redirectVal;
-                  } else {
-                      if ( typeof ( result ) !== 'undefined' && result !== null ) {
-                          result = $.parseJSON( result );
-                      }
-                      formObj.find( 'input[type=text],input[type=email],input[type=tel],input[type=password],textarea' ).each( function () {
-                          $( this ).val('');
-                      });
-                      formObj.find( 'input[type=checkbox],input[type=radio]' ).prop( 'checked', false );
-                      if( formObj.find( '.g-recaptcha' ).length > 0 ) {
-                          grecaptcha.reset();
-                      }
-                      resultsObj.removeClass( 'alert-success' ).removeClass( 'alert-danger' ).hide();
-                      resultsObj.addClass( result.alert ).html( result.message );
-                      resultsObj.removeClass( 'd-none' ).fadeIn( 'slow' ).delay( 4000 ).fadeOut( 'slow' );
-                  }
+                  // } else {
+                  //     if ( typeof ( result ) !== 'undefined' && result !== null ) {
+                  //         result = $.parseJSON( result );
+                  //     }
+                  //     formObj.find( 'input[type=text],input[type=email],input[type=tel],input[type=password],textarea' ).each( function () {
+                  //         $( this ).val('');
+                  //     });
+                  //     formObj.find( 'input[type=checkbox],input[type=radio]' ).prop( 'checked', false );
+                  //     if( formObj.find( '.g-recaptcha' ).length > 0 ) {
+                  //         grecaptcha.reset();
+                  //     }
+                  //     resultsObj.removeClass( 'alert-success' ).removeClass( 'alert-danger' ).hide();
+                  //     resultsObj.addClass( result.alert ).html( result.message );
+                  //     resultsObj.removeClass( 'd-none' ).fadeIn( 'slow' ).delay( 4000 ).fadeOut( 'slow' );
+                  // }
               }
           });
 
