@@ -377,11 +377,18 @@
                             </div>
                             <div class="col-12 col-md-5 sm-margin-20px-bottom">
                                 <input
-                                    class="border-radius-4px large-input bg-white border-color-white mb-0 margin-20px-right required"
+                                    class="border-radius-4px small-input bg-white border-color-white mb-0 margin-20px-right required"
                                     name="email" placeholder="Vul je e-mail adres in" type="email">
+                                    <input
+                                    class="border-radius-4px small-input bg-white border-color-white mb-0 margin-20px-right margin-20px-top required"
+                                    name="email" placeholder="Je telefoonnummer" type="tel">
+                                    <textarea
+                                    class="border-radius-4px small-textarea bg-white border-color-white mb-0 margin-20px-right margin-20px-top required"
+                                    name="bericht" rows="3" placeholder="Je bericht"></textarea>
+
                             </div>
                             <div class="col-12 col-md-auto text-center">
-                                <input type="hidden" name="redirect" value="../bericht-verzonden2.html">
+                                <input type="hidden" name="redirect" value="../bericht-verzonden.html">
                                 <button type="submit"
                                     class="btn btn-extra-large btn-dark-gray btn-round-edge btn-slide-right-bg submit"><i
                                         class="far fa-envelope icon-extra-small left-icon"></i>Ontvang offerte</button>
