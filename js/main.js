@@ -1131,79 +1131,79 @@
 
   /****** Contact form validation on submit ******/
   $( document ).on( 'click', '.submit', function() {
-      var error       = false,
-          _this       = $( this ),
-          formObj     = _this.parents( 'form' ),
-          emailFormat = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
-          telFormat   = /[0-9 -()+]+$/,
-          actionURL   = formObj.attr( 'action' );
-          // resultsObj  = formObj.find( '.form-results' ),
-          redirectVal = formObj.find( '[name="redirect"]' ).val();
-      formObj.find( '.required' ).removeClass( 'error' );
-      formObj.find( '.required' ).each( function() {
-          var __this   = $( this ),
-              fieldVal= __this.val();
-          if( fieldVal == '' || fieldVal == undefined ) {
-              error = true;
-              __this.addClass( 'error' );
-          } else if( __this.attr( 'type' ) == 'email' && ! emailFormat.test( fieldVal ) ) {
-              error = true;
-              __this.addClass( 'error' );
-          } else if( __this.attr( 'type' ) == 'tel' && ! telFormat.test( fieldVal ) ) {
-              error = true;
-              __this.addClass( 'error' );
-          }
-      });
-      var termsObj = formObj.find( '.terms-condition' );
-      if ( termsObj.length > 0 ) {
-          if ( ! termsObj.is( ':checked' ) ) {
-              error = true;
-              termsObj.addClass( 'error' );
-          }
-      }
-      // Google reCaptcha Verify
-      if( formObj.find( '.g-recaptcha' ).length > 0 ) {
-          var gResponse = grecaptcha.getResponse();
-          if ( ! ( gResponse.length ) ) {
-              error = true;
-              formObj.find( '.g-recaptcha' ).addClass( 'error' );
-          }
-      }
-      if( ! error && actionURL != '' && actionURL != undefined ) {
-          _this.addClass( 'loading' );
-          console.log('loading');
-          $.ajax({
-              type: 'POST',
-              url: actionURL,
-              data: formObj.serialize(),
-              success: function ( result ) {
-                  _this.removeClass( 'loading' );
-                  
-                  if( redirectVal != '' && redirectVal != undefined ) {
-                      window.location.href = redirectVal;
-                  } else{
-                    window.location.href = "http://www.laurensvanroomen.nl";
-                  }
-                  // else {
-                  //     if ( typeof ( result ) !== 'undefined' && result !== null ) {
-                  //         result = $.parseJSON( result );
-                  //     }
-                  //     formObj.find( 'input[type=text],input[type=email],input[type=tel],input[type=password],textarea' ).each( function () {
-                  //         $( this ).val('');
-                  //     });
-                  //     formObj.find( 'input[type=checkbox],input[type=radio]' ).prop( 'checked', false );
-                  //     if( formObj.find( '.g-recaptcha' ).length > 0 ) {
-                  //         grecaptcha.reset();
-                  //     }
-                  //     resultsObj.removeClass( 'alert-success' ).removeClass( 'alert-danger' ).hide();
-                  //     resultsObj.addClass( result.alert ).html( result.message );
-                  //     resultsObj.removeClass( 'd-none' ).fadeIn( 'slow' ).delay( 4000 ).fadeOut( 'slow' );
-                  // }
-              }
-          });
-      }
-      return false;
-  });
+    var error       = false,
+        _this       = $( this ),
+        formObj     = _this.parents( 'form' ),
+        emailFormat = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
+        telFormat   = /[0-9 -()+]+$/,
+        actionURL   = formObj.attr( 'action' );
+        // resultsObj  = formObj.find( '.form-results' ),
+        redirectVal = formObj.find( '[name="redirect"]' ).val();
+    formObj.find( '.required' ).removeClass( 'error' );
+    formObj.find( '.required' ).each( function() {
+        var __this   = $( this ),
+            fieldVal= __this.val();
+        if( fieldVal == '' || fieldVal == undefined ) {
+            error = true;
+            __this.addClass( 'error' );
+        } else if( __this.attr( 'type' ) == 'email' && ! emailFormat.test( fieldVal ) ) {
+            error = true;
+            __this.addClass( 'error' );
+        } else if( __this.attr( 'type' ) == 'tel' && ! telFormat.test( fieldVal ) ) {
+            error = true;
+            __this.addClass( 'error' );
+        }
+    });
+    var termsObj = formObj.find( '.terms-condition' );
+    if ( termsObj.length > 0 ) {
+        if ( ! termsObj.is( ':checked' ) ) {
+            error = true;
+            termsObj.addClass( 'error' );
+        }
+    }
+    // Google reCaptcha Verify
+    if( formObj.find( '.g-recaptcha' ).length > 0 ) {
+        var gResponse = grecaptcha.getResponse();
+        if ( ! ( gResponse.length ) ) {
+            error = true;
+            formObj.find( '.g-recaptcha' ).addClass( 'error' );
+        }
+    }
+    if( ! error && actionURL != '' && actionURL != undefined ) {
+        _this.addClass( 'loading' );
+        console.log('loading');
+        $.ajax({
+            type: 'POST',
+            url: actionURL,
+            data: formObj.serialize(),
+            success: function ( result ) {
+                _this.removeClass( 'loading' );
+                
+                if( redirectVal != '' && redirectVal != undefined ) {
+                    window.location.href = redirectVal;
+                } else{
+                  window.location.href = "http://www.laurensvanroomen.nl";
+                }
+                // else {
+                //     if ( typeof ( result ) !== 'undefined' && result !== null ) {
+                //         result = $.parseJSON( result );
+                //     }
+                //     formObj.find( 'input[type=text],input[type=email],input[type=tel],input[type=password],textarea' ).each( function () {
+                //         $( this ).val('');
+                //     });
+                //     formObj.find( 'input[type=checkbox],input[type=radio]' ).prop( 'checked', false );
+                //     if( formObj.find( '.g-recaptcha' ).length > 0 ) {
+                //         grecaptcha.reset();
+                //     }
+                //     resultsObj.removeClass( 'alert-success' ).removeClass( 'alert-danger' ).hide();
+                //     resultsObj.addClass( result.alert ).html( result.message );
+                //     resultsObj.removeClass( 'd-none' ).fadeIn( 'slow' ).delay( 4000 ).fadeOut( 'slow' );
+                // }
+            }
+        });
+    }
+    return false;
+});
 
   /****** Contact form validation on blur ******/
   $(document).on("blur", ".required", function () {
