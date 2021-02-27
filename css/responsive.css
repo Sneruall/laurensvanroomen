@@ -4760,6 +4760,7 @@
 
     /* typography */
     p { margin: 0 0 15px }
+    /* h3 { font-size:2rem; } */
 
     /* text size */
     .title-extra-small { font-size: 20px; line-height: 30px; }
