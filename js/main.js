@@ -1136,7 +1136,7 @@
         formObj     = _this.parents( 'form' ),
         emailFormat = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
         telFormat   = /[0-9 -()+]+$/,
-        actionURL   = formObj.attr( 'action' );
+        actionURL   = formObj.attr( 'action' ),
         // resultsObj  = formObj.find( '.form-results' ),
         redirectVal = formObj.find( '[name="redirect"]' ).val();
     formObj.find( '.required' ).removeClass( 'error' );
