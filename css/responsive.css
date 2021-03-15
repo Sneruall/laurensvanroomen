@@ -1,11 +1,5 @@
 @charset "UTF-8";
 
-/*!
- * Litho - v1.0
- * https://www.themezaa.com/
- * Copyright (c) 2021 themezaa.com
- */
-
 @media (min-width: 1901px) {
     .litho-parallax-bg { width: 45%; }
 }
